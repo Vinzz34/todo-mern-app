@@ -17,7 +17,7 @@ const Filters = ({status,setStatus}) => {
 
     async function handleClear(){
         if(user){
-            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}`,{
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}api/todos`,{
                 method: 'DELETE',
                 headers: {
                     'Authorization' : `Bearer ${user.token}`

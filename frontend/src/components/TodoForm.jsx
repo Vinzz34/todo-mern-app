@@ -15,7 +15,7 @@ const TodoForm = () => {
     e.preventDefault();
     if(user){
       if(input.trim() !== ""){
-        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}`, {
+        const response = await fetch(`${import.meta.env.VITE_SERVER_URL}api/todos`, {
           method: "POST",
           body: JSON.stringify({text:input}),
           headers:{

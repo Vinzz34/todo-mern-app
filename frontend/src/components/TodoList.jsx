@@ -16,7 +16,7 @@ const TodoList = () => {
 
   useEffect(() => {
     async function fetchData(){
-      const response = await fetch('http://localhost:4000/api/todos/',{
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}`,{
         headers: {
           'Authorization' : `Bearer ${user.token}`
         }

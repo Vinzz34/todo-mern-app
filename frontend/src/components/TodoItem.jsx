@@ -11,7 +11,7 @@ const TodoItem = ({index,id,text,completed}) => {
 
     async function handleChecked(){
         if(user){
-            const response = await fetch('http://localhost:4000/api/todos/'+id,{
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}`+id,{
               method: 'PATCH',
               body: JSON.stringify({completed:!completed}),
               headers:{
@@ -30,7 +30,7 @@ const TodoItem = ({index,id,text,completed}) => {
 
     async function deleteTodo(){
         if(user){
-            const response = await fetch('http://localhost:4000/api/todos/'+id,{
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}`+id,{
               method: 'DELETE',
               headers: {
                 'Authorization' : `Bearer ${user.token}`

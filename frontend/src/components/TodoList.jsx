@@ -24,8 +24,6 @@ const TodoList = () => {
 
       const json = await response.json()
 
-      console.log(json)
-
       if(response.ok){
         dispatch({type: 'SET_TODOS',payload: json || []})
       }
